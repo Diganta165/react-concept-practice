@@ -4,20 +4,28 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person></Person>
+     
+    </div>
+  );
+}
+
+function Person(){
+  const player = {
+    Name: 'Sakib Al Hasan',
+    Position: 'All-Rounder'
+  }
+  const stylePlayer = {
+    backgroundColor: 'skyblue',
+    border: '3px solid lightsalmon',
+    margin: '20px'
+  }
+
+  return(
+    <div style={stylePlayer}>
+      <h1 >{player.Name}</h1>
+      <p>{player.Position}</p>
+
     </div>
   );
 }
