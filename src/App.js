@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 
 const cinemas = [
@@ -17,6 +18,8 @@ function App() {
         cinemas.map(cinema => <Cinema nayok = {cinema.nayok} nayika ={cinema.Nayika}></Cinema>)
       }
      
+     <Count></Count>
+
     </div>
   );
 }
@@ -54,6 +57,28 @@ function Cinema(props){
       <h1>Nayok: {props.nayok}</h1>
       <h1>Nayika: {props.nayika}</h1>
     </div>
+  );
+}
+
+// Uses of UseState 
+
+function Count (){
+  const [count, setCount] = useState(0);
+  const handleIncrease = () =>{
+    const newCount = count + 1;
+    setCount(newCount);
+  }
+  const handleDecrease = () =>{
+    const newCount = count - 1;
+    setCount(newCount);
+  }
+  return(
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick ={handleIncrease}>Increase</button>
+      <button onClick ={handleDecrease}>Decrease</button>
+    </div>
+
   );
 }
 
