@@ -4,13 +4,14 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Person></Person>
+      <Person name = 'Sakib Al Hasan' job = 'Cricketer' ></Person>
+      <Person name = 'l3n' job = 'Pro Gamer' ></Person>
      
     </div>
   );
 }
 
-function Person(){
+function Person(props){
   const player = {
     Name: 'Sakib Al Hasan',
     Position: 'All-Rounder'
@@ -18,13 +19,14 @@ function Person(){
   const stylePlayer = {
     backgroundColor: 'skyblue',
     border: '3px solid lightsalmon',
-    margin: '20px'
+    margin: '20px',
+    borderRadius: '10px'
   }
 
   return(
     <div style={stylePlayer}>
-      <h1 >{player.Name}</h1>
-      <p>{player.Position}</p>
+      <h1 >Name: {props.name}</h1>
+      <p>Job: {props.job}</p>
 
     </div>
   );
